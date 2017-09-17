@@ -16,5 +16,10 @@ setup(
             "pytest",
             "webtest",
         ],
+        "dev": [
+            "webob",
+            "waitress",
+            "pastescript",
+        ],
     },
 )
