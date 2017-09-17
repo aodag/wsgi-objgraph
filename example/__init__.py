@@ -14,9 +14,13 @@ dummies = []
 
 
 @wsgify
-def application(request):
+def app(request):
     dummies.append(Dummy())
     return "hello"
 
 
-application = wsgiobjgraph.Middleware(application)
+def make_app(global_conf, **app_conf):
+    return app
+
+
+application = wsgiobjgraph.Middleware(app)

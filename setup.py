@@ -22,4 +22,9 @@ setup(
             "pastescript",
         ],
     },
+    entry_points={
+        "paste.filter_factory": [
+            "main=wsgiobjgraph.paste:filter_factory",
+        ],
+    },
 )
