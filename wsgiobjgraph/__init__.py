@@ -1,13 +1,18 @@
 import logging
 import objgraph
+from cgi import parse_qs
 
 
 logger = logging.getLogger(__name__)
 
 
 def most_common_types_app(environ, start_response):
-
-    types = objgraph.most_common_types(limit=1000)
+    limit = 1000
+    if environ.get("QUERY_STRING"):
+        query = parse_qs(environ.get("QUERY_STRING", ""))
+        if "limit" in query:
+            limit = int(query["limit"][0])
+    types = objgraph.most_common_types(limit=limit)
     html = [
         "<html>",
         "<head>",
