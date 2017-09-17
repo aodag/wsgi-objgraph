@@ -26,6 +26,7 @@ setup(
     extras_require={
         "testing": [
             "pytest",
+            "pytest-cov",
             "webtest",
         ],
         "dev": [
