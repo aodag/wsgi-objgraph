@@ -42,7 +42,7 @@ def most_common_types_app(environ, start_response):
     ]
     start_response(
         "200 OK",
-        [('Content=type', 'text/html')],
+        [('Content-type', 'text/html')],
     )
     html = [h.encode('utf-8') for h in html]
     return html
