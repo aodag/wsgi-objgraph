@@ -9,5 +9,5 @@ python:
 install:
   - pip install -e .[testing]
 
-scripts:
+script:
   - py.test --cov=wsgiobjgraph --cov-report=term-missin
