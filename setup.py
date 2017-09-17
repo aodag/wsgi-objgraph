@@ -1,6 +1,14 @@
 from setuptools import setup, find_packages
 
 
+def _read(fname):
+    try:
+        with open(fname) as f:
+            return f.read()
+    except Exception:
+        return ""
+
+
 setup(
     name="wsgi-objgraph",
     setup_requires=["setuptools_scm"],
@@ -8,6 +16,10 @@ setup(
     author="Atsushi Odagiri",
     author_email="aodagx@gmail.com",
     packages=find_packages(exclude=["example", "tests"]),
+    description="wsgi middleware for objgprah",
+    long_description=_read('README.rst'),
+    license="MIT",
+    url="https://github.com/aodag/wsgi-objgraph",
     install_requires=[
         "objgraph",
     ],
