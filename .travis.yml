@@ -11,3 +11,17 @@ install:
 
 script:
   - py.test --cov=wsgiobjgraph --cov-report=term-missing
+
+deploy:
+    provider: releases
+    api_key:
+      secure: "fJVwrSIOFInQFUW0pJNrYI7wUh+xjKZ9iNx62BYe3Clw5yKt2jSLKXi5db20jT6egBEdQWkNGUjugBkWonIBOanan2qAiVcwHvuOU9tFPWnyQhEGoWIynPR/5hWvZauiwNt5uM9Uzh3/Zib4/+1tZSbv26KI4yy66YQluFscpJuUYLB7RpHu9rHsUINdy0DhHXEV358N/JXieZ3KNfB7b7XmQR1FkZ+sCMwjLZODTdaYA0A3JbFbOGC7XrlwR5YcvAleD6qtA9LiV2V5hox2TJXnyLGz4ppWdLKGphnB2JIt9ferCcSFXJd6PgYaShgYfokd/UjEWI+2SB6UMeLNF06QZQGkWnD+oVST4/LoKUCGj9va4MEfSWPjRyTE+iDvG6cQ2slq+c5GFY/ly7ty55U6YAZ9kFCkhTlaCZdPUR54rJjfdTWMvgjwBIyLgBN7SFoCpGywF3siaq095CqHce3UlYDeRjLdF+LSbAdnBENI0EDTJiwLnysqihGOew1wwwlCSYIN0cUcGRuRtChk0P4yTVt7UvkB0IlTG989B3/9mn1bhxP3FSnDehPyydegApYXarkbJK4efbuLBSMhKja1wJDQxq72ICY/OvjMg3UqeZKsB5AUQ9ksrJoVpqjAiE5iAuk44GLKNuwrllOnOz13K1smg+r8rxN9RGrm6+M="
+
+
+    file_glob: true
+    file: "dist/wsgi_objgraph-*.whl"
+    skip_cleanup: true
+    overwrite: true
+    on:
+        tags: true
+        python: "3.6"
