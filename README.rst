@@ -2,6 +2,9 @@
 wsgi-objgraph
 =============================
 
+.. image:: https://travis-ci.org/aodag/wsgi-objgraph.svg?branch=master
+    :target: https://travis-ci.org/aodag/wsgi-objgraph
+
 ``wsgi-objgraph`` is wsgi middleware for `objgraph <https://mg.pov.lt/objgraph/>`_.
 
 wsgi middleware
