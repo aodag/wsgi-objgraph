@@ -10,4 +10,4 @@ install:
   - pip install -e .[testing]
 
 script:
-  - py.test --cov=wsgiobjgraph --cov-report=term-missin
+  - py.test --cov=wsgiobjgraph --cov-report=term-missing
