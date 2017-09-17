@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="wsgi-objgraph",
-    setup_require=["setuptools_scm"],
+    setup_requires=["setuptools_scm"],
     use_scm_version=True,
     author="Atsushi Odagiri",
     author_email="aodagx@gmail.com",
