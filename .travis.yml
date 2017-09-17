@@ -11,7 +11,8 @@ install:
 
 script:
   - py.test --cov=wsgiobjgraph --cov-report=term-missing
-
+before_deploy:
+  - python setup.py bdist_wheel
 deploy:
     provider: releases
     api_key:
